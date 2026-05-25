@@ -5,16 +5,23 @@ const square = document.createElement("div");
 
 square.classList.add("square");
 
+
+square.addEventListener("mouseover", () => {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+
+    square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+} )
+
+
+
 //append square as a child inside container div
 document.getElementById("container").appendChild(square);
 
-square.addEventListener("mouseover", () => {
-    square.style.backgroundColor = "blue";
-    
-     })
-
-
 }
+
+//now need to create button and event listener when user clicks button they can enter number of squares in the grid
 
 //select resize button from DOM
 const button = document.querySelector("#resize-btn");
@@ -30,6 +37,7 @@ button.addEventListener("click", () => {
          alert("Sorry, you must enter a value of 100 or less.")
     } else {
     for (i = 0; i < userInput * userInput; i++) {
+
     //creating a square element
 
 const square = document.createElement("div");
@@ -41,16 +49,18 @@ Size of the page is fixed at 960px width and 960px height,*/
 
 square.style.width = (960 / userInput) + "px";
 square.style.height = (960 / userInput) + "px";
-
 //append square as a child inside container div
 document.getElementById("container").appendChild(square);
 
 square.addEventListener("mouseover", () => {
-    square.style.backgroundColor = "blue";}
-)
-    
-     }
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() *256);
+    const b = Math.floor(Math.random() *256);
 
+    square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`}
+)    
+     }
     }
 })
+
 

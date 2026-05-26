@@ -14,6 +14,10 @@ square.addEventListener("mouseover", () => {
     square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
 } )
 
+square.addEventListener("mouseout", () => {
+    square.style.backgroundColor = "yellow";
+})
+
 
 
 //append square as a child inside container div
